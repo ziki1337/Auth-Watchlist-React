@@ -4,7 +4,7 @@ import { Button, TextField, Typography } from '@mui/material';
 import { IPropsLogin } from '../../../common/types/auth';
 
 const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {  //типизация
-    const {setPassword, setEmail, navigate} = props;
+    const { setPassword, setEmail, navigate } = props;
     return (
         <>
             <Typography variant="h2" fontFamily='Poppins' textAlign='center'>Авторизация</Typography>

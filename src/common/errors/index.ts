@@ -1,3 +1,3 @@
-export const AppErrors = {
+export const AppErrors =  {
     'PasswordDoNotMutch': 'Пароли не совпадают!'
 }

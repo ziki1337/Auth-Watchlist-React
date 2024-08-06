@@ -30,7 +30,7 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
                 }
                 const user = await instance.post('auth/login', userData);
                 await dispatch(login(user.data))
-                navigate('/')
+                navigate( '/' )
                 console.log(user.data);
             }
             catch (e) {
