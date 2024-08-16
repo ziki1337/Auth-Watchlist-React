@@ -40,14 +40,21 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
         else {
             if(password === repeatPassword)
             {
-                const userData = {
-                    firstName,
-                    userName,
-                    email,
-                    password
+                try {
+                    const userData = {
+                        firstName,
+                        userName,
+                        email,
+                        password
+                    }
+                    const newUser = await instance.post('auth/register', userData);
+                    await dispatch(login(newUser.data))
+                    navigate( '/' )
                 }
-                const newUser = await instance.post('auth/register', userData);
-                console.log(newUser);
+                catch(e) {
+                    console.log(e);
+                    return e;
+                }
             }
             else {
                 throw new Error(AppErrors.PasswordDoNotMutch);
